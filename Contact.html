@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Progress 1</title>
+     <link rel="icon" href="assets/img/icon emoji.jpg"/>
+     <link rel="stylesheet" href="assets/css/syle.css">
+    </head>
+    <body>
+   <!-- NAVBAR -->
+   
+   <nav>
+    <div class="main-menu">
+    <ul class="navbar-links">
+        <img src="assets/img/logo panda.avif" width="30px">
+       <li>
+         <a href="index.html" style="text-decoration: none; color: black;">Home</a>
+      </li>
+      <li>
+       <a href="blog.html" style="text-decoration: none; color: black;">Blog</a>
+     </li>
+   </ul>
+       <a class="nav-contact-button" href="Contact.html">Contact Me</a>
+    </div>
+    <div class="mobile-menu">
+        <img src="assets/img/logo panda.avif" width="40px">
+      
+        <button id="hamburger-button" class="hamburger-button">☰</button>
+    </div>
+</nav>
+    <div id="mobile-menu-list" class="mobile-menu-list
+     mobile-menu-hide">
+        <a href="index.html" >Home</a>
+        <a href="blog.html" >Blog</a>
+        <a href="Contact.html" class="menu-active">Contact Me</a>
+    </div>
+
+    <form class="contact-form" onsubmit="submitForm(event)">
+        <h2>Contact Me!</h2>
+        <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" type="text" required>
+        </div>
+
+        <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" type="text" required>
+        </div>
+
+        <div class="form-field">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" required>
+        </div>
+
+        <div class="form-field">
+            <label for="skill">Skill</label>
+            <select id="skill">
+                <option value="">Select any skill...</option>
+                <option value="Frontend"> Frontend</option>
+                <option value=" Backend">Backend</option>
+            </select>
+        </div>
+
+        <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+        <a href=""></a>
+    </form>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/belajar-js.js"></script>
+    <script src="assets/js/contact-form.js"></script>
+</body>
+</html>

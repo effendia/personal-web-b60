@@ -1,0 +1,22 @@
+// CONSOLE LOG
+// let greetings = "selamat pagi!";
+//  console.log( greetings);
+
+let warning = "jangan lupa makan!";
+console.log(warning)
+
+
+//  ALERT
+//  alert ("selamat pagi!")
+
+//  (memberikan pilihan kpd user untuk klik ok atau cancel)
+if(confirm ("apakah kmu mau move on?")=== true ) {
+alert("berhasil move on");
+console.log("gagal move on")
+}
+else {
+// tidak move on
+console.log("gagal move on");
+}
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress 1</title>
+    <link rel="icon" href="assets/img/icon emoji.jpg" />
+    <link rel="stylesheet" href="assets/css/syle.css">
+   
+</head>
+<body>
+    <!-- NAVBAR -->
+   
+    <nav>
+        <div class="main-menu">
+        <ul class="navbar-links">
+            <img src="assets/img/logo panda.avif" width="30px">
+           <li>
+             <a href="index.html" style="text-decoration: none; color: black;"  >Home</a>
+          </li>
+          <li>
+           <a href="blog.html" class="menu-active" style="text-decoration: none; color: black;">Blog</a>
+         </li>
+          <li>
+           <a href="testimonials.html" style="text-decoration: none; color: black;">Testimonials</a>
+         </li>
+       </ul>
+           <a class="nav-contact-button" href="Contact.html" >Contact Me</a>
+        </div>
+        <div class="mobile-menu">
+            <img src="assets/img/logo panda.avif" width="40px">
+          
+            <button id="hamburger-button" class="hamburger-button">☰</button>
+        </div>
+    </nav>
+        <div id="mobile-menu-list" class="mobile-menu-list
+         mobile-menu-hide">
+            <a href="index.html" >Home</a>
+            <a href="blog.html" class="menu-active">Blog</a>
+            <a href="testimonials.html" >Testimonials</a>
+            <a href="Contact.html">Contact Me</a>
+        </div>
+   
+      <!-- create blog -->
+<form id="create-blog" class="create-blog-form" onsubmit="addBlog(event)">
+    <h2>Create blog</h2>
+    <div class="form-field">
+        <label for="title">title</label>
+        <input id="title" id="title">
+    </div>
+
+    <div class="form-field"   > 
+     <label for="content">content</label>
+
+    <textarea id="content" rows="6" required></textarea>
+    </div>
+
+    <div class="form-field">
+        <label for="image">upload image</label>
+        <input id="image" type="file" required>
+    </div>
+
+    <div class="button-container">
+    <button type="submit">Submit</button>
+</div>
+</form> 
+
+<hr style="width:90%; margin: 0px auto ;">
+
+<!-- blog list -->
+
+<section id="bloglist" class="blog-list">
+    <article class="blog-item ">
+     <div class="blog-item-img">
+       <img src="assets/img/pandaProgramming.jpg" alt="blog-image">
+     </div>
+     <div class="blog-item-text">
+     <div class="blog-item-buttons">
+             <button class="blog-edit-button">Edit blog</button>
+             <button class="blog-post-button">Post blog</button>
+    </div>
+        <a href="blog-detail.html" style="text-decoration: none;">
+            <h1 class="blog-item-title">Pasar Coding Di Indonesia</h1>
+        </a>
+      
+         <p>30 jan 2025 11;22 wib | amelia</p>
+         <p>
+             It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem.</p>
+         <p class="blog-item-relative-time">1 day ago</p>    
+ 
+     </div>
+    </article>
+    <script src="assets/js/navbar.js"></script>
+<script src="assets/js/blog.js"></script>
+
+
+</body>
+</html>

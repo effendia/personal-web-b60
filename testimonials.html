@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress 1</title>
+    <link rel="icon" href="assets/img/icon emoji.jpg" />
+    <link rel="stylesheet" href="assets/css/testimonials.css">
+    <link rel="stylesheet" href="assets/css/syle.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="main-menu">
+        <ul class="navbar-links">
+            <img src="assets/img/logo panda.avif" width="30px">
+           <li>
+             <a href="index.html" style="text-decoration: none; color: black;">Home</a>
+          </li>
+          <li>
+           <a href="blog.html" style="text-decoration: none; color: black;">Blog</a>
+         </li>
+         <li>
+            <a href="testimonials.html"  class="menu-active"  style="text-decoration: none; color: black;">Testimonials</a>
+          </li>
+       </ul>
+           <a class="nav-contact-button" href="Contact.html">Contact Me</a>
+        </div>
+        <div class="mobile-menu">
+            <img src="assets/img/logo panda.avif" width="40px">
+          
+            <button id="hamburger-button" class="hamburger-button">☰</button>
+        </div>
+    </nav>
+        <div id="mobile-menu-list" class="mobile-menu-list
+         mobile-menu-hide">
+            <a href="index.html" class="menu-active">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="Contact.html">Contact Me</a>
+        </div>
+
+   <!-- Main Content Testimonials -->
+  <main> 
+    <h1 style="text-align: center;">My Testimonials</h1>
+    <h3  style="text-align: center;">Rating By Star</h3>
+
+<!-- star buttons -->
+ <div class="testimonials-stars-buttons">
+    <button onclick=" showAllTestimonials()">All</button>
+    <button onclick="filterTestimonialsByStar(1)">1★</button>
+    <button onclick="filterTestimonialsByStar(2)">2★</button>
+    <button onclick="filterTestimonialsByStar(3)">3★</button>
+    <button onclick="filterTestimonialsByStar(4)">4★</button>
+    <button onclick="filterTestimonialsByStar(5)">5★</button>
+ </div>
+
+ <!-- TESTIMONIALS- LIST -->
+  <div id="testimonialsContainer" class="testimonials-list">
+    <article>
+    <img src="assets/img/img pro.jpg" alt="Testimonials-imagee">
+    <P class="testimonials-list-cption"> "Karyamu Sangat Keren"</P>
+    <p style="text-align: right;">Amelia kulsum</p>
+    <p style="text-align: right; font-weight: bold;" >5★</p>
+    </article> 
+   
+  </div>
+
+
+   <script src="assets/js/navbar.js"></script>
+   <script src="assets/js/testimonials.js"> </script>
+</body>
+</html>
