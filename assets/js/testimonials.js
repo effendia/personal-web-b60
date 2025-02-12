@@ -1,68 +1,97 @@
-let testimonials = [
-    {
-        author: "amir mahfud",
-        rating: 5,
-        caption: " keren abisss!",
-        image:"img pro.jpg"
-    },
-    {
-        author: "Alex joshua",
-        rating: 5,
-        caption: " keren bangettttt!",
-        image:"coding_background..webp"
-    },
-    {
-        author: "Nurul Rahmadhani",
-        rating: 4,
-        caption: " sangat keren!",
-        image:"img pro.jpg"
-    },
-    {
-        author: "Amelia Kulsum",
-        rating: 4,
-        caption: " Kamu Hebat!",
-        image:"coding_background..webp"
-    },
-    {
-        author: "Septania Nova",
-        rating: 2,
-        caption: "Good",
-        image:"coding_background..webp"
-    }
+//  let dumytestimonials = [
+//     {
+//         author: "amir mahfud",
+//         rating: 5,
+//         caption: " keren abisss!",
+//         image:"img pro.jpg"
+//     },
+//     {
+//         author: "Alex joshua",
+//         rating: 5,
+//         caption: " keren bangettttt!",
+//         image:"coding_background..webp"
+//     },
+//     {
+//         author: "Nurul Rahmadhani",
+//         rating: 4,
+//         caption: " sangat keren!",
+//         image:"img pro.jpg"
+//     },
+//     {
+//         author: "Amelia Kulsum",
+//         rating: 4,
+//         caption: " Kamu Hebat!",
+//         image:"coding_background..webp"
+//     },
+//     {
+//         author: "Septania Nova",
+//         rating: 2,
+//         caption: "Good",
+//         image:"coding_background..webp"
+//     }
    
-]
- const testimonialsContainer = document.getElementById("testimonialsContainer");
+// ];
 
- const testimonialsHTML = (daftarTestimoni) => {
-    return daftarTestimoni.map(
-        (testimonial) => `    
-    <article>
-        <img src="assets/img/${testimonial.image} alt="Testimonials-imagee">
-        <P class="testimonials-list-cption"> "${testimonial.caption}"</P>
-        <p style="text-align: right;">${testimonial.author}</p>
-        <p style="text-align: right; font-weight: bold;" >${testimonial.rating}</p>
-    </article>
-        `
-    )
-    .join("");
- };
- 
- function showAllTestimonials() {
+function fetchTestimonials() {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+  
+      xhr.open("GET", "https://api.npoint.io/37b03059009dda95802a", true);
+  
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          // console.log("Response :", response);
+  
+          resolve(response.testimonials);
+        } else {
+          // console.error("Error :", xhr.status);
+          reject("Error :", xhr.status);
+        }
+      };
+      xhr.onerror = () => reject("network error");
+  
+      xhr.send();
+    });
+  }
+  
+  const testimonialsContainer = document.getElementById("testimonialsContainer");
+  
+  const testimonialsHTML = (array) => {
+    return array
+      .map(
+        (testimonial) => `
+          <article> 
+            <img src="${testimonial.image}" alt="testimonial-image" />
+            <p style="color: #777;">"${testimonial.caption}"</p>
+            <p style="text-align: right">- ${testimonial.author}</p>
+            <p style="text-align: right; font-weight: bold">${testimonial.rating}★</p>
+          </article>
+          `
+      )
+      .join("");
+  };
+  
+  async function showAllTestimonials() {
+    const testimonials = await fetchTestimonials();
+    console.log(testimonials);
     testimonialsContainer.innerHTML = testimonialsHTML(testimonials);
- }
-
- showAllTestimonials();
-
- function filterTestimonialsByStar(rating) {
-    const filteredTestimonials = testimonials.filter (
-        (testimonial) => testimonial.rating === rating 
+  }
+  
+  showAllTestimonials();
+  
+  async function filterTestimonialsByStar(rating) {
+    const testimonials = await fetchTestimonials();
+  
+    const filteredTestimonials = testimonials.filter(
+      (testimonial) => testimonial.rating === rating
     );
-
-    console.log(filteredTestimonials) ;
-
-if(filteredTestimonials.length === 0) {
-    return (testimonialsContainer.innerHTML =`<p>No testimonials.</p>`);
-}
-
+  
+    console.log(filteredTestimonials);
+  
+    if (filteredTestimonials.length === 0) {
+      return (testimonialsContainer.innerHTML =` <p>No testimonials.</p>);`)
+    }
+  
     testimonialsContainer.innerHTML = testimonialsHTML(filteredTestimonials);
- }
+}

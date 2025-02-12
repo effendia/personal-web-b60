@@ -6,33 +6,39 @@
     <title>Progress 1</title>
     <link rel="icon" href="assets/img/icon emoji.jpg" />
     <link rel="stylesheet" href="assets/css/syle.css">
+    <link href="assets/css/boothstrap/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    
 </head>
 <body>
     <!-- NAVBAR -->
    
-    <nav>
-        <div class="main-menu">
-        <ul class="navbar-links">
-            <img src="assets/img/logo panda.avif" width="30px">
-           <li>
-             <a href="index.html" style="text-decoration: none; color: black;"  >Home</a>
-          </li>
-          <li>
-           <a href="blog.html" class="menu-active" style="text-decoration: none; color: black;">Blog</a>
-         </li>
-          <li>
-           <a href="testimonials.html" style="text-decoration: none; color: black;">Testimonials</a>
-         </li>
-       </ul>
-           <a class="nav-contact-button" href="Contact.html" >Contact Me</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+         
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" alt="Bootstrap" 
+                width="50">
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="testimonials.html">Testimonials</a>
+              </li>
+            </ul>
+            <a class="btn btn-orangered" href="Contact.html">Contact Me</a>
+          </div>
         </div>
-        <div class="mobile-menu">
-            <img src="assets/img/logo panda.avif" width="40px">
-          
-            <button id="hamburger-button" class="hamburger-button">☰</button>
-        </div>
-    </nav>
+      </nav>
+   
         <div id="mobile-menu-list" class="mobile-menu-list
          mobile-menu-hide">
             <a href="index.html" >Home</a>
@@ -42,23 +48,26 @@
         </div>
    
       <!-- create blog -->
-<form id="create-blog" class="create-blog-form" onsubmit="addBlog(event)">
+     <form id="create-blog" class="create-blog-form" onsubmit="addBlog(event)">
     <h2>Create blog</h2>
-    <div class="form-field">
-        <label for="title">title</label>
-        <input id="title" id="title">
-    </div>
+    <div class="input-group mb-3">
+        <!-- <span class="input-group-text" id="title">Title</span> -->
+        <input id="title" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="title"
+        placeholder="Title"
+        required
 
-    <div class="form-field"   > 
-     <label for="content">content</label>
+        />
+      </div>
 
-    <textarea id="content" rows="6" required></textarea>
-    </div>
+      <div class="input-group  mb-3">
+        <!-- <span class="input-group-text">Content</span> -->
+        <textarea placeholder="Content" id="content" class="form-control" aria-label="content" rows="6"></textarea>
+      </div>
 
-    <div class="form-field">
-        <label for="image">upload image</label>
-        <input id="image" type="file" required>
-    </div>
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="image">
+        <label class="input-group-text" for="image">Upload</label>
+      </div>
 
     <div class="button-container">
     <button type="submit">Submit</button>
@@ -92,6 +101,8 @@
     </article>
     <script src="assets/js/navbar.js"></script>
 <script src="assets/js/blog.js"></script>
+<script src="assets/js/boothstrap/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+   </script>
 
 
 </body>

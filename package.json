@@ -1,0 +1,23 @@
+{
+  "name": "progresss",
+  "version": "1.0.0",
+  "description": "My First personal web",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/effendia/personal-web-b60.git"
+  },
+  "author": "Amelia Kulsum Effendi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/effendia/personal-web-b60/issues"
+  },
+  "homepage": "https://github.com/effendia/personal-web-b60#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

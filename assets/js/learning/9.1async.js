@@ -8,6 +8,7 @@
 
 //  const result = getData();
 //  console.log(result);
+
 console.log("start");
 
 //  funstion getData() {
@@ -46,22 +47,47 @@ console.log("start");
 // callback problem
 
 function prosses1 () {
-    return new Promise((resolve) => {
+    const succes = false;
+    return new Promise((resolve, reject) => {
+        if(succes) {
     setTimeout(() => {
-        console.log("proses 1");
+        console.log("proses 1 berhasil");
         resolve();
-    },5000);
+    },2000);
+}else {
+    console.log("proses 1 gagal");
+    reject();
+}
 });
 }
+
 function prosses2 () {
+    const succes = false;
+    return new Promise((resolve, reject) => {
+        if(succes) {
     setTimeout(() => {
-        console.log("proses 2");
+        console.log("proses 2 berhasil");
+        resolve();
     },2000);
+}else {
+    console.log("proses 2 gagal");
+    reject();
+}
+});
 }
 function prosses3 () {
+    const succes = false;
+    return new Promise((resolve, reject) => {
+        if(succes) {
     setTimeout(() => {
-        console.log("proses 3");
-    },3000);
+        console.log("proses 3 berhasil");
+        resolve();
+    },2000);
+}else {
+    console.log("proses 3 gagal");
+    reject();
+}
+});
 }
 
 // callback hell
@@ -78,12 +104,17 @@ function prosses3 () {
 
 
 
-// asynchrgnous
-async function multiProcess() {
+// asynchrognous
+async function multipleProcess() {
+     try {
     await prosses1();
     await prosses2();
     await prosses3();
+     } catch (error) {
+        console.log('ada proses yang gagal')
+     }
+    
     
 }
 
-multiProcess() 
+multipleProcess() ; 
