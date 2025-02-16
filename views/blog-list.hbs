@@ -1,0 +1,59 @@
+{{#> layout currentPage="Blog"}}
+
+<!-- blog list -->
+ <main>
+  <h1 style="text-align: center; margin-top: 30px">My Blogs</h1>
+  <div style="width: 90%; margin: 10px auto; text-align:right;">
+  <a href="/blog-create" class="blog-post-button">create Blog</a>
+  </div>
+<section id="blogList" class="blog-list">
+    <article class="blog-item ">
+     <div class="blog-item-img">
+       <img src="/img/pandaProgramming.jpg" alt="blog-image">
+     </div>
+     <div class="blog-item-text">
+     <div class="blog-item-buttons">
+             <button class="blog-edit-button">Edit blog</button>
+             <button class="blog-post-button">Post blog</button>
+    </div>
+        <a href="/blog-detail" style="text-decoration: none;">
+            <h1 class="blog-item-title">Pasar Coding Di Indonesia</h1>
+        </a>
+      
+         <p>30 jan 2025 11;22 wib | amelia</p>
+         <p>
+             It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem.</p>
+         <p class="blog-item-relative-time">1 day ago</p>    
+ 
+     </div>
+    </article>
+
+{{#each blogs}}
+<!-- blog list -->
+
+<section id="blogList" class="blog-list">
+    <article class="blog-item ">
+     <div class="blog-item-img">
+       <img src="{{this.image}}" alt="blog-image">
+     </div>
+     <div class="blog-item-text">
+     <div class="blog-item-buttons">
+             <button class="blog-edit-button">Edit blog</button>
+             <button class="blog-post-button">Post blog</button>
+    </div>
+        <a href="/blog-detail" style="text-decoration: none;">
+            <h1 class="blog-item-title">{{this.title}}</h1>
+        </a>
+      
+         <p>{{formatDateToWIB this.postedAt}} | {{this.author}}</p>
+         <p>
+            {{this.content}}
+        </p>
+         <p class="blog-item-relative-time">{{getRelativeTime this.postedAt}}</p>    
+ 
+     </div>
+    </article>
+{{/each}}
+</section>
+</main>
+{{/layout}}

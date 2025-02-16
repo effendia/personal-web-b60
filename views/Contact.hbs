@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>Progress 1</title>
-     <link rel="icon" href="/img/icon emoji.jpg"/>
-     <link rel="stylesheet" href="/css/syle.css">
-     <link href="/css/boothstrap/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   
-    </head>
-    <body>
-   <!-- NAVBAR -->
-   
-   <nav>
-    <div class="main-menu">
-    <ul class="navbar-links">
-        <img src="/img/logo.png" width="">
-       <li>
-         <a href="index" style="text-decoration: none; color: black;">Home</a>
-      </li>
-      <li>
-       <a href="blog" style="text-decoration: none; color: black;">Blog</a>
-     </li>
-   </ul>
-       <a class="nav-contact-button" href="Contact.html">Contact Me</a>
-    </div>
-    <div class="mobile-menu">
-        <img src="/img/logo panda.avif" width="40px">
-      
-        <button id="hamburger-button" class="hamburger-button">☰</button>
-    </div>
-</nav>
+{{#> layout currentPage="contact" }}
     <div id="mobile-menu-list" class="mobile-menu-list
      mobile-menu-hide">
         <a href="index" >Home</a>
@@ -71,10 +40,12 @@
         <button type="submit">Submit</button>
         <a href=""></a>
     </form>
-    <script src="/js/navbar.js"></script>
+   
+   <script src="/js/navbar.js"></script>
     <script src="/js/belajar-js.js"></script>
     <script src="/js/contact-form.js"></script>
     <script src="/js/boothstrap/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
    </script>
 </body>
 </html>
+   {{/layout}}
