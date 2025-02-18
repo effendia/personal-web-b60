@@ -1,51 +1,53 @@
 {{#> layout currentPage="contact" }}
-    <div id="mobile-menu-list" class="mobile-menu-list
+<div id="mobile-menu-list" class="mobile-menu-list
      mobile-menu-hide">
-        <a href="index" >Home</a>
-        <a href="blog" >Blog</a>
-        <a href="Contact" class="menu-active">Contact Me</a>
+    <a href="index">Home</a>
+    <a href="blog">Blog</a>
+    <a href="Contact" class="menu-active">Contact Me</a>
+</div>
+
+<form class="contact-form" onsubmit="submitForm(event)">
+    <h2>Contact Me!</h2>
+    <div class="form-field">
+        <label for="name">Name</label>
+        <input id="name" type="text" required>
     </div>
 
-    <form class="contact-form" onsubmit="submitForm(event)">
-        <h2>Contact Me!</h2>
-        <div class="form-field">
-            <label for="name">Name</label>
-            <input id="name" type="text" required>
-        </div>
+    <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" type="text" required>
+    </div>
 
-        <div class="form-field">
-            <label for="email">Email</label>
-            <input id="email" type="text" required>
-        </div>
+    <div class="form-field">
+        <label for="subject">Subject</label>
+        <input id="subject" type="text" required>
+    </div>
 
-        <div class="form-field">
-            <label for="subject">Subject</label>
-            <input id="subject" type="text" required>
-        </div>
+    <div class="form-field">
+        <label for="skill">Skill</label>
+        <select id="skill">
+            <option value="">Select any skill...</option>
+            <option value="Frontend"> Frontend</option>
+            <option value=" Backend">Backend</option>
+        </select>
+    </div>
 
-        <div class="form-field">
-            <label for="skill">Skill</label>
-            <select id="skill">
-                <option value="">Select any skill...</option>
-                <option value="Frontend"> Frontend</option>
-                <option value=" Backend">Backend</option>
-            </select>
-        </div>
+    <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" required></textarea>
+    </div>
 
-        <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" required></textarea>
-        </div>
+    <button type="submit">Submit</button>
+    <a href=""></a>
+</form>
 
-        <button type="submit">Submit</button>
-        <a href=""></a>
-    </form>
-   
-   <script src="/js/navbar.js"></script>
-    <script src="/js/belajar-js.js"></script>
-    <script src="/js/contact-form.js"></script>
-    <script src="/js/boothstrap/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-   </script>
+<script src="/js/navbar.js"></script>
+<script src="/js/belajar-js.js"></script>
+<script src="/js/contact-form.js"></script>
+<script src="/js/boothstrap/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
-   {{/layout}}
+{{/layout}}
