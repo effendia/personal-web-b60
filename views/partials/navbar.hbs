@@ -1,6 +1,7 @@
   <!-- NAVBAR -->
+ 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
+        <div  class="container">
          
             <a class="navbar-brand" href="#">
                 <img src="/img/logo.png" alt="Bootstrap" 
@@ -25,6 +26,13 @@
                  {{/if}}
                 " href="/blog">Blog</a>
               </li>
+             <li class="nav-item">
+                <a class="nav-link
+                 {{#if (equal currentPage 'Project')}}
+                 active fw-bold
+                 {{/if}}
+                " href="/project">My Project</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link
                  {{#if (equal currentPage 'testimonials')}}
@@ -37,3 +45,4 @@
           </div>
         </div>
       </nav>
+  

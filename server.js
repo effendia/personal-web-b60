@@ -4,20 +4,24 @@ const hbs = require("hbs");
 const path = require("path");
 const methodOverride = require("method-override");
 
+// const { updateBlog } = require("./controllers/controller-v1");
+
 const {
   renderBlog,
+  renderBlogCreate,
   renderBlogDetail,
-  postBlog,
-  renderCreateBlog,
   renderBlogEdit,
   updateBlog,
   deleteBlog,
-} = require("./controllers/controller-v1");
+  createBlog,
+} = require("./controllers/controller-v2");
+
 const { formatDateToWIB, getRelativeTime } = require("./utils/time");
 
 const port = 3000;
 
-app.set("view engine", "hbs");
+app.set("view engine", "hbs"); // express tolong set view engine dri apk saya untuk menggunkn hbs
+
 app.set("views", path.join(__dirname, "./views")); //c:/ my computer/documents/../../progres 1/views
 //dirname itu mengacu k folder web kita
 
@@ -39,9 +43,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-//DELETE EXISTING BLOG
-app.delete("/blog/:id", deleteBlog);
-
 //contact
 app.get("/contact", (req, res) => {
   res.render("contact");
@@ -49,7 +50,15 @@ app.get("/contact", (req, res) => {
 
 //testimonials
 app.get("/testimonials", (req, res) => {
-  res.render("testimonials");
+  res.render("testimonials"); //tolong kirimkan respons yang isinya di dlm
+});
+
+app.get("/project", (req, res) => {
+  res.render("project");
+});
+
+app.get("/project-detail", (req, res) => {
+  res.render("project-detail");
 });
 
 //blog list
@@ -59,16 +68,19 @@ app.get("/blog", renderBlog); //(app ketika saya buka /blog lkukn renderblog)
 app.get("/blog/:id", renderBlogDetail);
 
 // render  create blog page
-app.get("/blog-create", renderCreateBlog);
+app.get("/blog-create", renderBlogCreate);
 
 //render edit blog
 app.get("/blog-edit/:id", renderBlogEdit); //buka halaman
 
 //submit/save edited
-app.patch("/blog-update:id", updateBlog); //submit untuk update
+app.patch("/blog-update/:id", updateBlog); //submit untuk update
+
+//DELETE EXISTING BLOG
+app.delete("/blog/:id", deleteBlog);
 
 // SUBMIT NEW BLOG
-app.post("/blog-create", postBlog);
+app.post("/blog-create", createBlog);
 
 // REQUEST PARAMS
 app.get("/about/:id", (req, res) => {
@@ -82,6 +94,10 @@ app.get("/blog", (req, res) => {
   // const author = req.query.author
   const { title, author } = req.query;
   res.send(`ini halangan blog ${title} dengan author${author}`);
+});
+
+app.get("*", (req, res) => {
+  res.render("page-404");
 });
 
 app.listen(port, () => {

@@ -6,10 +6,11 @@ html {
 
 body {
     margin: 0;
+ 
 }
 
 nav {
-    background-color: #f8f9f8;
+    background-color: #e6976a; 
     padding: 2px 40px;
 }
 
@@ -22,6 +23,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+
 
 }
 
@@ -123,29 +125,29 @@ nav {
 
 #card-section {
     flex: 1;
-    width: 100%;
+    width: 90%;
      
-}
+} */
 
-.profile-card {
-
-    border-radius: 15px;
-    box-shadow: 0px 0px 30px 10px #aaa;
-      padding: 10px;
-      /* margin: 20px auto; */
- }
-     
+ .profile-card {
+   
+    border-radius: 10px;
+     box-shadow: 0px 0px 30px 10px #aaa; 
+       padding: 10px; 
+       margin: 20px auto; 
+  }  
+  
 .profile-table {
     border-style: solid;
     border-collapse: collapse; 
     width: 100%;
-}
+} 
 
 .profile-img {
     border-radius: 15px;
     width: 100%; 
 }
-
+ 
 
 /* profile introduction */
 #introduction {
@@ -364,4 +366,144 @@ padding: 0 30px 30px;
 /* BLOG DETAIL */
 .blog-detail {
     width: 90%;
+}
+
+
+/*                       CARD           */
+
+ .container {
+    display: flex;
+    justify-content: center;
+    
+}   
+
+/* .container {
+    width: 80%;
+    max-width: 900px;
+}  */
+
+
+.card {
+     display: flex; 
+     background: rgb(62, 53, 53);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0.2);
+    max-width: 900px; 
+    width: 100%; 
+
+   
+}
+
+.content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.content h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.content p {
+    color: gray;
+    font-size: 14px;
+    line-height: 1 ,5;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contact-btn-black {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.download-cv {
+text-decoration: none;
+color: black;
+display: flex;
+align-items: center;
+}
+
+
+.socials-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.socials-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.profile {
+    text-align: center;
+    background-color: white;
+    width: 300px;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+}
+
+.profile h3 {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.profile p {
+    color: gray;
+    font-size: 16px;
+}
+/* my project */ 
+
+
+
+.form-container {
+  
+    background-color: rgb(219, 45, 45);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 6px;
+
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.btn-dark {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: right;
+
+}
+
+
+/* project */
+
+.project-card {
+    width: 90%;
+    background-color: aqua;
 }
